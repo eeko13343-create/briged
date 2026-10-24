@@ -1,0 +1,10 @@
+Cara membangun libretrobridge.so lewat GitHub (bisa dari browser HP):
+1. Buat repo baru di github.com (private tidak masalah).
+2. Add file > Upload files: upload retrobridge.cpp dan libretro.h ke root repo, lalu Commit.
+3. Add file > Create new file. Pada kolom nama ketik:  .github/workflows/build.yml
+   (garis miring otomatis membuat folder). Tempel seluruh isi build-bridge.yml, lalu Commit.
+4. Tab Actions > build-bridge > Run workflow. Tunggu sampai hijau (+- 1 menit).
+5. Buka run itu, bagian Artifacts, unduh "libretrobridge-arm64-v8a" (zip), ekstrak, hasilnya libretrobridge.so.
+6. Taruh di project:  app/src/main/jniLibs/arm64-v8a/libretrobridge.so  (buat folder jniLibs/arm64-v8a bila belum ada).
+7. Build app di Code On The Go seperti biasa.
+Jika langkah build gagal merah: salin log langkah "Build libretrobridge.so" dan kirim ke Claude.
